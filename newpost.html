@@ -1,0 +1,40 @@
+<?php
+if(isset($_POST['submitPost'])) {
+
+	$replaceArray = array("<", ">", "$", "#");
+	$topic = str_replace($replaceArray, "",$_POST['postTopic']);
+	$text = str_replace($replaceArray, "",$_POST['postText']);
+	$date = date('Y/m/d H:i');
+	$author = $_SESSION['user'];
+
+	$sth = $con->prepare('INSERT INTO `posts` (topic, text, date, author) VALUES(:topic, :text, :date, :author)');
+
+	$sth->bindParam(':topic', $topic);
+	$sth->bindParam(':text', $text);
+	$sth->bindParam(':date', $date);
+	$sth->bindParam(':author', $author);
+
+	$sth->execute();
+	header("Location: index.php");
+
+}
+?>
+
+<div id="info_div_top">New Article</div>
+<div id="info_div">
+
+	<form action="" method="post">
+	<label>Topic:</label><br />
+	<input id="input" type="text" name="postTopic" maxlength="50"><br />
+
+	<label>Text:</label><br /> 
+	<textarea id="input2" name="postText"></textarea><br />
+
+</div>
+<div id="info_div_bot">
+
+	<input id="button_r" type="submit" name="submitPost" value="Submit Post"><br />
+	</form>
+
+</div>
+

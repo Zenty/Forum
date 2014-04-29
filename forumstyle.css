@@ -1,0 +1,97 @@
+#forum_div table {
+	margin: 0;
+	padding: 0px;
+	width: 100%;
+	border-spacing: 0;
+}
+
+#forum_div tr {
+	color: white;
+	width: 100%;
+}
+
+#forum_div th {
+	text-align: left;
+	padding: 10px;
+	border-bottom: 2px solid black;
+}
+
+
+#forum_div td {
+	padding: 10px;
+}
+
+#forum_div tr:hover, tr:hover {
+	background-color: none;
+
+	color: #FFFFFF;
+}
+
+.forum_header {
+	font-weight: bold;
+	border-bottom: 1px solid black;
+}
+
+.forum_header .threads {
+	width: 100px;
+}
+
+.forum_header .posts {
+	width: 100px;
+}
+
+.forum_header .newforumpost {
+	width: 100px;
+}
+
+.forum_item {
+}
+
+#topic {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#topic2 {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#description {
+	font-style: italic;
+
+}
+
+#topic a, #topic2 a {
+	color: #FF9933;
+}
+
+#topic a:hover, #topic2 a:hover {
+	text-decoration: underline;
+]
+
+#newforumpostbutton {
+	background-color: #FF9933;
+
+	width: 100%;
+	height: 40px;
+
+	color: #FFFFFF;
+	font-weight: bold;
+	font-size: 15px;
+
+	border: 0px solid black;
+}
+
+#newforumpostbutton:hover {
+	background-color: #2E2E2E;
+
+	width: 100%;
+	height: 40px;
+
+	color: #FF9933;
+	font-weight: bold;
+	font-size: 15px;
+
+	border: 0px solid black;
+}

@@ -1,0 +1,7 @@
+<?php
+include_once("connect.php");
+include_once("auth.php");
+
+session_unset();
+session_destroy();
+header("Location: login.php");

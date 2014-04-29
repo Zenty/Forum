@@ -1,0 +1,34 @@
+<?php
+if(isset($_POST['submitForum'])) {
+
+	$replaceArray = array("<", ">", "$", "#");
+	$topic = str_replace($replaceArray, "",$_POST['forumTopic']);
+	$description = str_replace($replaceArray, "",$_POST['forumDescription']);
+
+	$sth = $con->prepare('INSERT INTO `forumtopics` (topic, description) VALUES(:topic, :description)');
+
+	$sth->bindParam(':topic', $topic);
+	$sth->bindParam(':description', $description);
+
+	$sth->execute();
+	header("Location: forum.php");
+
+}
+?>
+<div id="info_div_top">New Forum</div>
+<div id="info_div">
+
+	<form action="" method="post">
+	<label>Forum Name:</label><br />
+	<input id="input" type="text" name="forumTopic" maxlength="50"><br />
+
+	<label>Description:</label><br /> 
+	<textarea id="input2" name="forumDescription"></textarea><br />
+
+</div>
+<div id="info_div_bot">
+
+	<input id="button_r" type="submit" name="submitForum" value="Add Forum"><br />
+	</form>
+
+</div>
