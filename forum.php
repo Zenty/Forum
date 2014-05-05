@@ -44,7 +44,21 @@
 						<?php include("forumtopics.php"); ?>
 					</table>
 				</div>
-				<div id="forum_div_bot"></div>
+				<div id="forum_div_bot">
+					<?php
+						if(isset($_GET['forum'])) {
+					?>
+						<tr class="forum_item">
+						<td class="newforumpost">
+							<form action="newforumpost.php" method="post">
+							<input class="newforumpostbutton" type="submit" name="newforumpost" value="New Thread">
+							</form>
+						</td>
+						<tr>			
+					<?php
+						}
+					?>
+				</div>
 			</div>
 		</div>
 	</div>

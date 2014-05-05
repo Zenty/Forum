@@ -24,13 +24,6 @@ foreach($sth->fetchAll(PDO::FETCH_ASSOC) as $row) {
 <?php
 }
 ?>
-	<tr class="forum_item">
-		<td class="newforumpost">
-			<form action="newforumpost.php" method="post">
-			<input type="submit" id="newforumpostbutton" name="newforumpost" value="New Post">
-			</form>
-		</td>
-	<tr>
 <?php
 } else {
 	echo "hello";
