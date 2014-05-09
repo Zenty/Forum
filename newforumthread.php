@@ -4,14 +4,13 @@
 	<meta charset="UTF-8">
 	<title>Website</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" type="text/css" href="forumstyle.css">
 </head>
 <body>
 
 	<?php include_once("connect.php"); ?>
 	<?php include_once("auth.php"); ?>
 	<?php
-	if($_SESSION['online'] == false) {
+	if($_SESSION['online'] == false OR $_SESSION['admin'] == false) {
 		header("Location: login.php");
 	} else { ?>
 
@@ -36,34 +35,13 @@
 	<div id="wrapper">
 	<div id="content">
 		<div id="main_div">
+			
 			<div id="float">
-				<div id="forum_div_top">Forum</div>
-				<div id="forum_div">
-					<table>
-
-						<?php include("forumtopics.php"); ?>
-					</table>
-				</div>
-				<div id="forum_div_bot">
-					<?php
-						if(isset($_GET['forum']) && !isset($_GET['thread'])) {
-					?>
-							<form action="newforumthread.php" method="post">
-							<input type="hidden" name="forum" value="<?php echo $_GET['forum']; ?>">
-							<input class="forumbutton" type="submit" name="newforumthread" value="New Thread">
-							</form>		
-					<?php
-						}
-						if(isset($_GET['thread'])) {
-					?>
-							<form action="newforumpost.php" method="post">
-							<input class="forumbutton" type="submit" name="newforumpost" value="New Post">
-							</form>		
-					<?php
-						}
-					?>
-				</div>
+				<?php
+				include("newthread.html");
+				?>
 			</div>
+
 		</div>
 	</div>
 	</div>

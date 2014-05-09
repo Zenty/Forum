@@ -1,0 +1,49 @@
+<?php
+if(isset($_POST['createThread'])) {
+
+	$name = $_POST['postthreadName'];
+	$user = $_SESSION['user'];
+	$date = date('Y/m/d');
+	$date2 = date('Y/m/d H:i');
+	$t_id = $_POST['forum'];
+	$text = $_POST['postText'];
+
+	$sth = $con->prepare('INSERT INTO `forumthreads` (name, user, date, t_id) VALUES(:name, :user, :date, :t_id)');
+
+	$sth->bindParam(':name', $name);
+	$sth->bindParam(':user', $user);
+	$sth->bindParam(':date', $date);
+	$sth->bindParam(':t_id', $t_id);
+
+	$sth->execute();
+
+	$sth = $con->prepare('INSERT INTO `forumposts` (text, user, date, p_id) VALUES(:text, :user, :date, :p_id)');
+
+	$sth->bindParam(':text', $text);
+	$sth->bindParam(':user', $user);
+	$sth->bindParam(':date', $date2);
+	$sth->bindParam(':p_id', $p_id);
+
+	$sth->execute();
+
+}
+?>
+
+<div id="info_div_top">New Article</div>
+<div id="info_div">
+
+	<form action="" method="post">
+	<input type="hidden" name="forum" value="<?php echo $_POST['forum']; ?>">
+	<label>Thread Name:</label><br />
+	<input id="input" type="text" name="postthreadName" maxlength="50"><br />
+
+	<label>Text:</label><br /> 
+	<textarea id="input2" name="postText"></textarea><br />
+
+</div>
+<div id="info_div_bot">
+
+	<input id="button_r" type="submit" name="createThread" value="Create Thread"><br />
+	</form>
+
+</div>

@@ -70,7 +70,7 @@
 	text-decoration: underline;
 }
 
-.newforumpostbutton {
+.forumbutton {
 	background-color: #FF9933;
 
 	width: 400px;
@@ -83,7 +83,7 @@
 	border: 0px solid black;
 }
 
-.newforumpostbutton:hover {
+.forumbutton:hover {
 	background-color: #2E2E2E;
 
 	color: #FF9933;
