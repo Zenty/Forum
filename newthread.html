@@ -17,8 +17,16 @@ if(isset($_POST['createThread'])) {
 
 	$sth->execute();
 
-	$sth = $con->prepare('INSERT INTO `forumposts` (text, user, date, p_id) VALUES(:text, :user, :date, :p_id)');
+	$sth = $con->prepare('SELECT id FROM `forumthreads` WHERE (user, date) = (:user, :date) ORDER BY id DESC');
+	$sth->bindParam(':user', $user);
+	$sth->bindParam(':date', $date);
 
+	$sth->execute();
+	$p_id = $sth->fetchColumn();
+
+	$sth = $con->prepare('INSERT INTO `forumposts` (thread_name, text, user, date, p_id) VALUES(:thread_name, :text, :user, :date, :p_id)');
+
+	$sth->bindParam(':thread_name', $name);
 	$sth->bindParam(':text', $text);
 	$sth->bindParam(':user', $user);
 	$sth->bindParam(':date', $date2);

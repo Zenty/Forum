@@ -2,7 +2,7 @@
 if(!isset($_GET['thread'])) {
 ?>	
 	<tr class="forum_header">
-		<th>Threads</th>
+		<th>Threads - <?php echo "<a href='forum.php'>Return</a>" ?></th>
 		<th class="posts">Posts</th>
 	</tr>
 <?php
@@ -26,6 +26,6 @@ foreach($sth->fetchAll(PDO::FETCH_ASSOC) as $row) {
 ?>
 <?php
 } else {
-	echo "hello";
+	include("thread.php");
 }
 ?>

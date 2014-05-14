@@ -10,6 +10,10 @@
 	width: 100%;
 }
 
+#forum_div #post_user_info tr {
+	color: white;
+}
+
 #forum_div th {
 	text-align: left;
 	padding: 10px;
@@ -32,6 +36,14 @@
 	border-bottom: 1px solid black;
 }
 
+.forum_header th a {
+	color:#FF9933;
+}
+
+.forum_header th a:hover {
+	text-decoration: underline;
+}
+
 .forum_header .threads {
 	width: 100px;
 }
@@ -44,7 +56,15 @@
 	width: 100px;
 }
 
+.forum_header .post_user_info {
+	border-right: 1px solid black;
+}
+
 .forum_item {
+}
+
+.forum_post {
+	border-bottom: 1px solid black;
 }
 
 #topic {
@@ -87,4 +107,10 @@
 	background-color: #2E2E2E;
 
 	color: #FF9933;
+}
+
+#create_forum_post {
+	margin: 0 auto;
+	width: 500px;
+
 }

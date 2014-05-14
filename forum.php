@@ -55,10 +55,16 @@
 					<?php
 						}
 						if(isset($_GET['thread'])) {
-					?>
-							<form action="newforumpost.php" method="post">
-							<input class="forumbutton" type="submit" name="newforumpost" value="New Post">
-							</form>		
+					?>	<div id="create_forum_post">
+							<?php if(isset($_POST['createforumpost'])) { ?>
+							<?php include("createforumpost.php"); ?>
+							<?php } else { ?>
+							<form action="" method="post">
+							<textarea id="input2" name="post_text"></textarea><br />
+							<input id="button_r" type="submit" name="createforumpost" value="Post"><br />
+							</form>
+							<?php } ?>
+						</div>
 					<?php
 						}
 					?>
