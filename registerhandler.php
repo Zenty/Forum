@@ -25,7 +25,7 @@ if($_POST['new_user'] == "" || $_POST['new_pass'] == "" || $_POST['new_pass_re']
 		if($_POST['new_pass'] == $_POST['new_pass_re']) {	
 
 			$sth = $con->prepare("INSERT INTO users (name, pass) VALUES (:name, :pass)");
-			$sth->bindParam(":name", $_POST['new_user']);
+			$sth->bindParam(":name", ucfirst(strtolower($_POST['new_user'])));
 			$sth->bindParam(":pass", crypt($_POST['new_pass'], "$3a$08$2"));
 			$sth->execute();
 

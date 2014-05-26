@@ -63,9 +63,11 @@
 .forum_item {
 }
 
-.forum_post {
-	border-bottom: 1px solid black;
+.forum_post td {
+	border-bottom: 2px dashed #000000;
 }
+
+
 
 #topic {
 	font-size: 30px;
@@ -113,4 +115,35 @@
 	margin: 0 auto;
 	width: 500px;
 
+}
+
+#post_user {
+	color: #FF9933;
+	font-weight: bold;
+}
+
+#pages {
+	float: right;
+}
+
+#active2 {
+	background-color: #FF9933 !important;
+	width: 130px !important;
+	padding: 2px;
+
+	color: #FFFFFF !important;
+}
+
+#editButton {
+	background-color: transparent;
+	color: #FF9933;
+	border: 0px solid black;
+	padding: 0px;
+	margin: 0;
+	font-size: 14px;
+}
+
+#editButton:hover {
+	color: #FF9933;
+	text-decoration: underline;
 }

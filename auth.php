@@ -16,3 +16,5 @@ if(!isset($_SESSION['auth'])) {
 		$_SESSION['admin'] = false;
 	}	
 }
+
+include("PTcount.php");

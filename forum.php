@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -67,6 +68,7 @@
 						</div>
 					<?php
 						}
+
 					?>
 				</div>
 			</div>
@@ -77,3 +79,4 @@
 	<?php } ?>
 </body>
 </html>
+<?php ob_flush(); ?>

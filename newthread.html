@@ -33,11 +33,11 @@ if(isset($_POST['createThread'])) {
 	$sth->bindParam(':p_id', $p_id);
 
 	$sth->execute();
-
+	header("Location: forum.php?forum=".$t_id."&thread=".$p_id);
 }
 ?>
 
-<div id="info_div_top">New Article</div>
+<div id="info_div_top">New Thread</div>
 <div id="info_div">
 
 	<form action="" method="post">

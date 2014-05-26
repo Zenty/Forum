@@ -10,8 +10,10 @@
 	<?php include_once("connect.php"); ?>
 	<?php include_once("auth.php"); ?>
 	<?php
-	if($_SESSION['online'] == false OR $_SESSION['admin'] == false) {
+	if($_SESSION['online'] == false ) {
 		header("Location: login.php");
+		echo $_SESSION['online'];
+		echo $_SESSION['admin'];
 	} else { ?>
 
 	<div id="logo">

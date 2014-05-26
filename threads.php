@@ -17,7 +17,7 @@ foreach($sth->fetchAll(PDO::FETCH_ASSOC) as $row) {
 	<tr class="forum_item">
 		<td>
 		<div id="topic2"><?php echo "<a href='?forum=".$t_id."&thread=".$row['id']."'>".$row['name']."</a>"; ?></div>
-		<div id="description"><?php echo "Started by: <font color='#FF9933'>".$row['user']."</font> at <font color='#FF9933'>".$row['date']."</font>"; ?></div>
+		<div id="description"><?php echo "Started by: <font color='#FF9933'><b>".$row['user']."</b></font> at <font color='#FF9933'>".$row['date']."</font>"; ?></div>
 		</td>
 		<td class="posts"><?php echo $row['posts']; ?></td>
 	<tr>

@@ -352,3 +352,23 @@ textarea {
 #postpages:first-child {
 	margin-left: 10px;
 }
+
+#postadmin {
+	float: right;
+	margin-left: 10px;
+}
+
+#postAdminButton {
+	background-color: transparent;
+	color: #FF9933;
+	border: 0px solid black;
+	padding: 0px;
+	margin: 0;
+	font-size: 25px;
+	text-weight: bold;
+}
+
+#postAdminButton:hover {
+	color: #FF9933;
+	text-decoration: underline;
+}

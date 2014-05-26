@@ -1,5 +1,4 @@
 <?php
-
 	$text = $_POST['post_text'];
 	$user = $_SESSION['user'];
 	$date2 = date('Y/m/d H:i');
@@ -15,4 +14,4 @@
 
 	$sth->execute();
 	header("Location: forum.php?forum=".$t_id."&thread=".$p_id);
-?>
+	?>

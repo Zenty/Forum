@@ -4,7 +4,6 @@ if(!isset($_GET['forum'])) {
 	<tr class="forum_header">
 		<th>Directory</th>
 		<th class="threads">Threads</th>
-		<th class="posts">Posts</th>
 	</tr>
 <?php
 
@@ -19,7 +18,6 @@ foreach($sth->fetchAll(PDO::FETCH_ASSOC) as $row) {
 		<div id="description"><?php echo $row['description']; ?></div>
 	</td> 
 	<td class="threads"><?php echo $row['t_threads']; ?></td>
-	<td class="posts"><?php echo $row['t_posts']; ?></td>
 </tr>
 <?php
 }
